@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 4 </title>
+</head>
+<body>
+    <style>
+        body {
+          display: flex;
+          justify-content: center;
+        }
+        div {
+          margin: 10px 0px;
+        }
+      </style>
+    </head>
+    <body>
+
+      <form onsubmit="validateAndSubmit(event)">
+        <h1>Sign Up Form</h1>
+
+        <div>
+          <label for="name">Name: </label>
+          <input type="text" placeholder="Enter Name" name="name" id="name"/>
+        </div>
+
+        <div>
+          <label for="email">Email: </label>
+          <input type="email" placeholder="Enter Your Email" name="email" id="mail" />
+        </div>
+
+        <div>
+          <label for="password">Password: </label>
+          <input type="password" placeholder=" Enter Password" id="pass" />
+        </div>
+
+        <button type="submit" id="submit">Submit</button>
+      </form>
+  
+      <script>
+        function validateAndSubmit(event) {
+          event.preventDefault();
+          console.log("Entered");
+
+          const name = document.querySelector("#name");
+          const email = document.querySelector("#mail");
+          const password = document.querySelector("#pass");
+
+            if (name.value.length >= 3 && password.value.length >= 8) {
+                alert("Form Submit Successfull..!!");
+            } else {
+                alert("Form Submit Failed") ;
+            } }
+      </script>   
+</body>
+</html>

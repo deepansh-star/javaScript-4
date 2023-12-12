@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 8</title>
+</head>
+<body>
+    <style>
+        body {
+          display: flex;
+          background-color: #090909;
+          color: #e8e8e8;
+          font-size: 2.8rem;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+  
+        .timer {
+            border-radius: 8px;
+            padding: 15px;
+            border: 3px solid #f0f0f0;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="timer" id="timer">
+        <span id="hours">00</span> : <span id="minutes">00</span> :
+        <span id="seconds">00</span>
+      </div>
+  
+      <script>
+
+        function updateTimer() {
+          let currentTime = new Date();
+          let hours = currentTime.getHours().toString().padStart(2, "0");
+          let minutes = currentTime.getMinutes().toString().padStart(2, "0");
+          let seconds = currentTime.getSeconds().toString().padStart(2, "0");
+          let hexCode = `#${hours}${minutes}${seconds}`;
+  
+          document.getElementById("hours").innerText = hours;
+          document.getElementById("minutes").innerText = minutes;
+          document.getElementById("seconds").innerText = seconds;
+  
+          document.body.style.backgroundColor = hexCode;
+        }
+        setInterval(updateTimer, 1000);
+      </script>
+</body>
+</html>
